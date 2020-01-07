@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8065216911010035165}
   - component: {fileID: 959692933799678651}
+  - component: {fileID: 5672411480109515502}
   - component: {fileID: 979186521957999513}
   - component: {fileID: 4709390475540484931}
   - component: {fileID: 2112068822336668491}
@@ -215,6 +216,28 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &5672411480109515502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065216911010035164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!54 &979186521957999513
 Rigidbody:
   m_ObjectHideFlags: 0

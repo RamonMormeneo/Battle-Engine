@@ -8,7 +8,19 @@ public class ChangeCamera : NetworkBehaviour
     public GameObject Cam;
     public GameObject Cam2;
     // Start is called before the first frame update
+    void Start()
+    {
+        Cam2.SetActive(false);
+        if (isLocalPlayer)
+        {
+            Cam.SetActive(true);
 
+        }
+        else
+        {
+            Cam.SetActive(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
