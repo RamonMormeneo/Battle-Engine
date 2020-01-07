@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 using UnityEngine;
 
-public class ChangeCamera : MonoBehaviour
+public class ChangeCamera : NetworkBehaviour
 {
     public GameObject Cam;
     public GameObject Cam2;
@@ -11,7 +12,10 @@ public class ChangeCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if(Cam.activeSelf == true)
