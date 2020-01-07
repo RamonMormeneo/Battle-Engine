@@ -21,6 +21,7 @@ public class CharController : NetworkBehaviour
         {
             return;
         }
+        
         //Apartir de aqui el jugador local
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
