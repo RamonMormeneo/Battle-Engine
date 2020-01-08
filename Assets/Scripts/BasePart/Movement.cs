@@ -17,6 +17,8 @@ public class Movement : NetworkBehaviour
     private Rigidbody body;
     public float speed_multiply;
 
+    public bool Girar_Ruedas = false;
+
     private void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -35,20 +37,23 @@ public class Movement : NetworkBehaviour
                 transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
 
 
-                float forwards = Input.GetAxis("Vertical");
+                float forwards = -(Input.GetAxis("Vertical"));
 
                 if (forwards > 0)
                 {
+                    Girar_Ruedas = true;
                     speed = speed + acceleration * Time.deltaTime;
                 }
 
                 else if (forwards < 0)
                 {
+                    Girar_Ruedas = true;
                     speed = speed - acceleration * Time.deltaTime;
                 }
 
                 else
                 {
+                    Girar_Ruedas = false;
                     if (speed > 0)
                     {
                         speed = speed - brake * Time.deltaTime;
