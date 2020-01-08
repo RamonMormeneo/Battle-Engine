@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class onHit : MonoBehaviour
 {
-   
+    public int dmg;
     private void OnCollisionEnter(Collision collision)
     {
         GameObject hit = collision.gameObject;
@@ -12,7 +12,7 @@ public class onHit : MonoBehaviour
 
         if(health != null)
         {
-            health.TeakeDamge(90);
+            health.TeakeDamge(dmg);
         }
 
         Destroy(gameObject);
