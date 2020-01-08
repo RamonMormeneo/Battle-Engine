@@ -35,7 +35,7 @@ public class Movement : NetworkBehaviour
                 transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
 
 
-                float forwards = Input.GetAxis("Vertical");
+                float forwards = -(Input.GetAxis("Vertical"));
 
                 if (forwards > 0)
                 {
