@@ -37,7 +37,7 @@ public class Movement : NetworkBehaviour
         }
         
         if (Cam.activeSelf == true && can_move)
-            {
+        {
                 float turn = Input.GetAxis("Horizontal");
                 transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
 
@@ -73,9 +73,15 @@ public class Movement : NetworkBehaviour
                 Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
                 //transform.Translate(velocity * Time.deltaTime, Space.Self); // Old movement
                 body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply); // New movement
+
         }
-        
-       
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            body.AddForce(transform.forward * -1800.0f, ForceMode.Impulse);
+        }
+
+
     }
     private void OnCollisionEnter(Collision collision)
 
