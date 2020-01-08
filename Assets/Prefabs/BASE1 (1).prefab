@@ -769,6 +769,7 @@ MonoBehaviour:
   acceleration: 5
   brake: 5
   turnSpeed: 45
+  speed_multiply: 3
 --- !u!1 &8065216911175389755
 GameObject:
   m_ObjectHideFlags: 0
