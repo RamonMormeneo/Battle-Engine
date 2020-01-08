@@ -784,6 +784,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet_Prefab: {fileID: 6681722682575932793, guid: 06af1bb1dd8293e468895970f9c7ed9b,
     type: 3}
+  Bullet_Gancho: {fileID: 6681722682575932793, guid: d09f74b05b84ed4439c098e14de80ec1,
+    type: 3}
+  Cadenas: {fileID: 6985816135631668292, guid: 88308c1eb9ec0384dbaab407ebbd64b2, type: 3}
   Bullet_Spawn: {fileID: 5024739018530857346}
 --- !u!65 &4709390475540484931
 BoxCollider:
