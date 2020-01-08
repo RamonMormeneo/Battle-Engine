@@ -10,6 +10,8 @@ public class CameraMovement : NetworkBehaviour
     public float turnSpeed = 4.0f;
     private Vector3 offset;
 
+    //public GameObject torreta;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +26,11 @@ public class CameraMovement : NetworkBehaviour
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
         transform.position = Player.transform.position + offset;
         transform.LookAt(Player.transform.position);
+
+        //torreta.transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0);
+
     }
 
    
-    private void OnDisconnectedFromServer()
-    {
-        Debug.Log("Mar");
-    }
+
 }
