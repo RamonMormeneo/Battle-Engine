@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8538884107414990981}
   - component: {fileID: 4473402192720983619}
   - component: {fileID: 5248274533739585906}
+  - component: {fileID: 1257041917240410480}
   m_Layer: 0
   m_Name: Bullet_Gancho
   m_TagString: Untagged
@@ -185,3 +186,16 @@ MonoBehaviour:
   - {fileID: 0}
   target: {fileID: 7485187009056131173}
   maxIterations: 10
+  base_: {fileID: 0}
+--- !u!114 &1257041917240410480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681722682575932793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad1e9308d71af54097ba499bf78ab24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

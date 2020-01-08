@@ -69,7 +69,8 @@ public class Shooting : NetworkBehaviour
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100.0f;
 
         //Spawn teh bullet on the clients
-        //NetworkServer.Spawn(bullet);
+        NetworkServer.Spawn(cadenas);
+        NetworkServer.Spawn(bullet);
         //Destroy (2s)
         //Destroy(bullet, 2);
 

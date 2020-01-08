@@ -127,7 +127,7 @@ public class IK_FABRIK2 : MonoBehaviour
         if (pelota)
         {
             transform.position = new Vector3(
-                joints[3].transform.position.x, 1, joints[3].transform.position.z);
+                joints[3].transform.position.x, 81.99654f, joints[3].transform.position.z);
 
 
             joints[0].transform.position = base_.transform.position;
@@ -142,7 +142,7 @@ public class IK_FABRIK2 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
+        
         Destroy(gameObject.GetComponent<Rigidbody>());
 
         //collision.gameObject.transform.parent = joints[3].transform;

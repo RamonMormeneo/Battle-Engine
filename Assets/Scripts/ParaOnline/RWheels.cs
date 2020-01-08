@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class RWheels : MonoBehaviour
+using UnityEngine.Networking;
+public class RWheels : NetworkBehaviour
 {
     public GameObject base_;
     private float acc = 1;

@@ -23,7 +23,7 @@ public class Movement : NetworkBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody>();
-        Debug.Log(can_move);
+
     }
 
     void FixedUpdate()

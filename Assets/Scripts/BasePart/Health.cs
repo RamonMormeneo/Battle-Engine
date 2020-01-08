@@ -22,7 +22,6 @@ public class Health : NetworkBehaviour
             spawnPoints = FindObjectsOfType<NetworkStartPosition> ();
             Health[] temp= FindObjectsOfType<Health>();
             num = temp.Length;
-            Debug.Log(num);
         }
     }
     public void TeakeDamge(int amount)

@@ -19,7 +19,7 @@ public class WaitforPlayers : NetworkBehaviour
     void Update()
     {
         num = FindObjectsOfType<Movement>();
-        Debug.Log(numPlayers);
+
         if (num.Length == numPlayers)
         {
             thing = true;

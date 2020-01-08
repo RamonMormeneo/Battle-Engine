@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class LWheels : MonoBehaviour
+public class LWheels : NetworkBehaviour
 {
     public GameObject base_;
     private float acc = 1;
