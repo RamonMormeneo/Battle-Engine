@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Constructible : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int price = 100;
+    public Sprite preview;
+    public string unitName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

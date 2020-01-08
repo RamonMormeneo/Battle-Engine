@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 8065216910718887132}
   - component: {fileID: 8065216910718887130}
   - component: {fileID: 8065216910718887133}
+  - component: {fileID: 1426176833205544557}
   m_Layer: 0
   m_Name: City Camera
   m_TagString: Untagged
@@ -544,6 +545,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8065216910718887135}
   m_Enabled: 1
+--- !u!114 &1426176833205544557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065216910718887135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e9c53988a8dae42a3626065c94949e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCardPrefab: {fileID: 0}
 --- !u!1 &8065216910815888666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1716,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8065216911010035165}
     m_Modifications:
+    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
+      propertyPath: m_Name
+      value: connection (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.99
@@ -1757,10 +1775,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalScale.z
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
-      propertyPath: m_Name
-      value: connection (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1871,6 +1885,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8065216911010035165}
     m_Modifications:
+    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
+      propertyPath: m_Name
+      value: connection (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.1389885
@@ -1927,10 +1945,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
-      propertyPath: m_Name
-      value: connection (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1950,6 +1964,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8065216911010035165}
     m_Modifications:
+    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
+      propertyPath: m_Name
+      value: connection (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.9606876
@@ -2006,10 +2024,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
-      propertyPath: m_Name
-      value: connection (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2029,6 +2043,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8065216911010035165}
     m_Modifications:
+    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
+      propertyPath: m_Name
+      value: connection (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.19
@@ -2085,10 +2103,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
-      propertyPath: m_Name
-      value: connection (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2108,6 +2122,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8065216911010035165}
     m_Modifications:
+    - target: {fileID: 100000, guid: e8c0c072ba79d894b9b1268646165c50, type: 3}
+      propertyPath: m_Name
+      value: House_Complement
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8c0c072ba79d894b9b1268646165c50, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.38
@@ -2164,10 +2182,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e8c0c072ba79d894b9b1268646165c50, type: 3}
-      propertyPath: m_Name
-      value: House_Complement
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c0c072ba79d894b9b1268646165c50, type: 3}
 --- !u!4 &5699331134983466634 stripped
@@ -2183,6 +2197,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8065216911010035165}
     m_Modifications:
+    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
+      propertyPath: m_Name
+      value: connection (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.17
@@ -2239,10 +2257,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
-      propertyPath: m_Name
-      value: connection (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2262,6 +2276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8065216911010035165}
     m_Modifications:
+    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
+      propertyPath: m_Name
+      value: connection (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.8599997
@@ -2317,10 +2335,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_LocalScale.z
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
-      propertyPath: m_Name
-      value: connection (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: b9d801b48a025e642827baff816ae9f6, type: 3}
       propertyPath: m_Materials.Array.data[0]
