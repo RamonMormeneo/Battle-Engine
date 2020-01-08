@@ -11,6 +11,8 @@ public class Health : NetworkBehaviour
     public RectTransform Healthbar;
     private NetworkStartPosition[] spawnPoints;
     private int num;
+ 
+    public float maxLife = 3.0f;
     // Start is called before the first frame update
 
     private void Start()
@@ -52,7 +54,17 @@ public class Health : NetworkBehaviour
             Vector3 SpawnPoint = Vector3.zero;
             
             transform.position = spawnPoints[num-1].transform.position;
+            transform.rotation = transform.rotation = spawnPoints[num - 1].transform.rotation; 
+           
+                maxLife--;
+                if (maxLife <= 0)
+                {
+                    Application.Quit();
+                }
+            
         }
         currentHealth = maxHealth;
     }
+
+   
 }

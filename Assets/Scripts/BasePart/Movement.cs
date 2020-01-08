@@ -16,22 +16,27 @@ public class Movement : NetworkBehaviour
     private float speed = 0.0f;
     private Rigidbody body;
     public float speed_multiply;
+    public bool can_move = false;
 
     public bool Girar_Ruedas = false;
 
     private void Start()
     {
         body = GetComponent<Rigidbody>();
+        Debug.Log(can_move);
     }
 
     void FixedUpdate()
     {
+        WaitforPlayers h = FindObjectOfType<WaitforPlayers>();
 
+        can_move = h.thing;
         if (!hasAuthority)
         {
             return;
         }
-        if (Cam.activeSelf == true)
+        
+        if (Cam.activeSelf == true && can_move)
             {
                 float turn = Input.GetAxis("Horizontal");
                 transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
