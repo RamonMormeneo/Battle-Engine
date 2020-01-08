@@ -38,7 +38,7 @@ public class Shooting : NetworkBehaviour
         GameObject bullet = (GameObject)Instantiate(Bullet_Prefab, Bullet_Spawn.position,Bullet_Spawn.rotation);
 
         // add velocity
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100.0f;
+        bullet.GetComponent<Rigidbody>().velocity = gameObject.transform.GetChild(0).transform.forward * 100.0f;
 
         //Spawn teh bullet on the clients
         NetworkServer.Spawn(bullet);
