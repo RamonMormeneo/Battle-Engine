@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 8065216910718887132}
   - component: {fileID: 8065216910718887130}
   - component: {fileID: 8065216910718887133}
-  - component: {fileID: 1426176833205544557}
+  - component: {fileID: 7207868947595817283}
   m_Layer: 0
   m_Name: City Camera
   m_TagString: Untagged
@@ -545,7 +545,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8065216910718887135}
   m_Enabled: 1
---- !u!114 &1426176833205544557
+--- !u!114 &7207868947595817283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -554,10 +554,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8065216910718887135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e9c53988a8dae42a3626065c94949e, type: 3}
+  m_Script: {fileID: 11500000, guid: 202ee9828ee9e7d479fbec7ee2e26880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuCardPrefab: {fileID: 0}
+  builds:
+  - {fileID: 2627630227795370777, guid: 96ddc4bfd6f38ba44848f7ec144e54bb, type: 3}
+  - {fileID: 7143750501783245319, guid: d2a59ebbdd1c24c4f80c2b506eac3d41, type: 3}
+  Cam: {fileID: 8065216910718887135}
 --- !u!1 &8065216910815888666
 GameObject:
   m_ObjectHideFlags: 0

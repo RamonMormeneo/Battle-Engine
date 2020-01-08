@@ -6,34 +6,7 @@ using UnityEngine.EventSystems;
 public class Constructor : MonoBehaviour
 {
     public Building[] builds;
-
-
-    void OnMouseDown()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-        BuildsLayout.singleton.DestroyAllChildren();
-        for (int i = 0; i < builds.Length; i++)
-        {
-            int u = i;
-            BuildsLayout.singleton.AddChildren(
-                builds[i].constructible.preview,
-                builds[i].constructible.price.ToString(),
-                () => {
-                    if (builds[u].constructible.price > ResourceManager.singleton.Resources)
-                    {
-                        return;
-                    }
-                    var go = Instantiate(builds[u]);
-                    ConstructBuilding.singleton.craftingBuilding = go;
-
-                }
-                );
-        }
-    }
-
+    public GameObject Cam;
 
 
     // Start is called before the first frame update
@@ -47,5 +20,27 @@ public class Constructor : MonoBehaviour
     void Update()
     {
 
+        if (Cam.activeSelf == true)
+        {
+            BuildsLayout.singleton.DestroyAllChildren();
+            for (int i = 0; i < builds.Length; i++)
+            {
+                int u = i;
+                BuildsLayout.singleton.AddChildren(
+                    builds[i].constructible.preview,
+                    builds[i].constructible.price.ToString(),
+                    () =>
+                    {
+                    //    if (builds[u].constructible.price > ResourceManager.singleton.Resources)
+                    //    {
+                    //        return;
+                    //    }
+                        var go = Instantiate(builds[u]);
+                        ConstructBuilding.singleton.craftingBuilding = go;
+
+                    }
+                    );
+            }
+        }
     }
 }

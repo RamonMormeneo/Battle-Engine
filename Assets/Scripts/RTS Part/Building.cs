@@ -63,19 +63,13 @@ public class Building : MonoBehaviour
     //////////////////////////////////////////////////////////////////      Tiempo de crafteo, para que tarden un rato en contruirse los edificios
     //////////////////////////////////////////////////////////////////
 
-
-    public int buildTime = 5;
+      
 
     void CraftPoint()
     {
-        buildTime--;
-        if (buildTime <= 0)
-        {
             constructionFinished = true;
             onConstructionComplete.Invoke();
-            buildingRend.material.color = Color.blue;
-            print("Craft Complete");
-        }
+        
     }
 
 
