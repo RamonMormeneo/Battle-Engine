@@ -67,10 +67,11 @@ public class Movement : NetworkBehaviour
         
        
     }
-
     private void OnCollisionEnter(Collision collision)
+
     {
         speed = 0;
     }
+
 
 }
