@@ -34,5 +34,4 @@ public class Alquitran : MonoBehaviour
         if (collision.gameObject.tag == "Alquitran")
             inside = false;
     }
-
 }

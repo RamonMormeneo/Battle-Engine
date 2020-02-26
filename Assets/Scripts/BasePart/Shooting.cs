@@ -8,7 +8,10 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     public GameObject Bullet_Prefab;
     public GameObject Bullet_Gancho;
     public GameObject Cadenas;
+    public GameObject Bola_PEM;   
+    public GameObject Bullet_Alquitran;
     public Transform Bullet_Spawn;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +28,14 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CmdFire();
+            //Switch: Abilities.
+            //CmdFire();
+            //CmdPEM(50);
+            CmdAlquitran(50);
         }
         if (Input.GetMouseButtonDown(0)) //Boton izquierdo disparamos gancho.
         {
+            //Switch: Abilities.
             CmdGancho();
         }
     }
@@ -80,4 +87,18 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         //Destroy(bullet, 2);
 
     }
+
+    void CmdPEM(float F)
+    {
+        GameObject obj = Instantiate(Bola_PEM, Bullet_Spawn.position, Bola_PEM.transform.rotation); // Instanciar tiro.
+        obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
+    }
+
+    void CmdAlquitran(float F)
+    {
+        GameObject obj = Instantiate(Bullet_Alquitran, Bullet_Spawn.position, Bullet_Alquitran.transform.rotation); // Instanciar tiro.
+        obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
+    }
+
+
 }
