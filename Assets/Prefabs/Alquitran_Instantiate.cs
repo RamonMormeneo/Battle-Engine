@@ -8,6 +8,6 @@ public class Alquitran_Instantiate : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(charco_alquitran, collision.contacts[0].point, charco_alquitran.transform.rotation);
+        Instantiate(charco_alquitran, transform.position, charco_alquitran.transform.rotation);
     }
 }

@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3170536837349124879}
   - component: {fileID: 6712856633356764014}
   - component: {fileID: 745182992718240460}
-  - component: {fileID: 8195905904209119632}
   - component: {fileID: 8538884107414990981}
   - component: {fileID: 4473402192720983619}
   - component: {fileID: 4116066778265973187}
+  - component: {fileID: -441164219686102119}
   m_Layer: 0
   m_Name: Bullet_Alquitran
   m_TagString: PEM
@@ -114,19 +114,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8195905904209119632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6681722682575932793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66d6f8b046b2c44680e63dbdc6d7016, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 20
 --- !u!114 &8538884107414990981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,3 +183,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charco_alquitran: {fileID: 6507656852107342669, guid: f8c89826a7568bc4cb88bd7027ddfe53,
     type: 3}
+--- !u!114 &-441164219686102119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681722682575932793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66d6f8b046b2c44680e63dbdc6d7016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 20

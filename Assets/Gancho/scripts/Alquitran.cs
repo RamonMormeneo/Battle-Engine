@@ -17,21 +17,38 @@ public class Alquitran : MonoBehaviour
     {
         //Si esta activado, slow..
         //Cambiar velocidad de la base, a una definida: 5 
-        if (inside) return;
-        //gameObject.GetComponent<player_movement>().speed = 5;
-        else return;
-        //gameObject.GetComponent<player_movement>().speed = original_Speed;
+        if (inside)
+        {
+            gameObject.GetComponent<Movement>().speed_multiply = 1;
+            gameObject.GetComponent<Movement>().maxSpeed = 10;
+            print("INSIDE");
+        }
+        else
+        {
+            gameObject.GetComponent<Movement>().speed_multiply = 3;
+            gameObject.GetComponent<Movement>().maxSpeed = 35;
+        }
+       
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Alquitran")
+        {
             inside = true;
+        }
+           
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.tag == "Alquitran")
+        {
             inside = false;
+            //gameObject.GetComponent<Movement>().speed = 3;
+            ///Salir del alquitran
+            //print(gameObject.GetComponent<Movement>().speed);
+        }
+           
     }
 }

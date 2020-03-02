@@ -13,7 +13,7 @@ public class Movement : NetworkBehaviour
     public float acceleration = 5.0f; 
     public float brake = 5.0f; 
     public float turnSpeed = 45.0f;
-    private float speed = 0.0f;
+    public float speed = 0.0f;
     private Rigidbody body;
     public float speed_multiply;
     public bool can_move = false;
