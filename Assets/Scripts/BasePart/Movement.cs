@@ -31,6 +31,7 @@ public class Movement : NetworkBehaviour
         WaitforPlayers h = FindObjectOfType<WaitforPlayers>();
 
         can_move = h.thing;
+
         if (!hasAuthority)
         {
             return;
