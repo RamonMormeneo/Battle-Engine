@@ -9,7 +9,8 @@ public class Movement : NetworkBehaviour
 
     public Vector3 move;
     public Vector3 velocity; 
-    public float maxSpeed = 35.0f; 
+    public float maxSpeed;  //No poner valores aqui, porque los del editor no se utilizaran. 
+    public float mSpeed;
     public float acceleration = 5.0f; 
     public float brake = 5.0f; 
     public float turnSpeed = 45.0f;
@@ -26,11 +27,15 @@ public class Movement : NetworkBehaviour
 
     }
 
+
     void FixedUpdate()
     {
-        WaitforPlayers h = FindObjectOfType<WaitforPlayers>();
+        //WaitforPlayers h = FindObjectOfType<WaitforPlayers>();
 
-        can_move = h.thing;
+        //can_move = h.thing;
+
+
+        can_move = true;
 
         if (!hasAuthority)
         {
@@ -41,7 +46,6 @@ public class Movement : NetworkBehaviour
         {
                 float turn = Input.GetAxis("Horizontal");
                 transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
-
 
                 float forwards = -(Input.GetAxis("Vertical"));
 
@@ -70,8 +74,17 @@ public class Movement : NetworkBehaviour
                     }
                 }
 
-                speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
-                Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
+            speed = Mathf.Clamp(speed, -mSpeed, mSpeed);
+            //if (speed > maxSpeed)
+            //{
+            //    speed = maxSpeed;
+            //}
+            //else if (speed < -maxSpeed)
+            //{
+            //    speed = -maxSpeed;
+            //}
+
+            Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
                 //transform.Translate(velocity * Time.deltaTime, Space.Self); // Old movement
                 body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply); // New movement
 
