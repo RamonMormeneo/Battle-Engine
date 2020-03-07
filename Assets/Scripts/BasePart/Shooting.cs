@@ -12,14 +12,27 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     public GameObject Bullet_Alquitran;
     public Transform Bullet_Spawn;
 
+    //El gancho y el disparo basico tendrian que tenerse siempre como habilidades comunes. 
+    //Las demas adicionales? 
+    public enum Abilites { Lanzallas, PEM, Alquitran, Sierras }
 
-    // Start is called before the first frame update
+    //Objects: 
+    public GameObject [] Sierras;
+
+    //Particles: 
+    public GameObject prefabLanzallamas; public Transform emitterPos; public GameObject AreaLlamas;
+
+    //CD: 
+    private float CDLanzallamas = 4.0f;
+
+    //Abilites
+    public Abilites abilities;
+    private bool GOINGCD = false;
+
     void Start()
     {
-
     }
-
-    // Update is called once per frame
+    //Deberiamos hacer un switch para escoger las habilidades. 
     void Update()
     {
         //if (!isLocalPlayer)
@@ -31,13 +44,50 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
             //Switch: Abilities.
             //CmdFire();
             //CmdPEM(50);
-            CmdAlquitran(50);
+            //CmdAlquitran(50);
+
         }
         if (Input.GetMouseButtonDown(0)) //Boton izquierdo disparamos gancho.
         {
             //Switch: Abilities.
             CmdGancho();
         }
+
+        // Entrada a escoger de habilidad.
+        switch (abilities)
+        {
+            case Abilites.Lanzallas:
+                //Code to shoot here:
+                if (Input.GetKeyDown(KeyCode.Space) && CDLanzallamas == 4.0f && GOINGCD == false)
+                {
+                    CmdLanzallamas();
+                    print("SHOOT");
+                    GOINGCD = true;
+                }
+                if(GOINGCD)
+                {
+                    CDLanzallamas -= Time.deltaTime;
+                    if(CDLanzallamas <= 0.0f)
+                    {
+                        CDLanzallamas = 4.0f;
+                        AreaLlamas.GetComponent<Collider>().enabled = false;
+                        GOINGCD = false;
+                    }
+                }
+                break;
+            case Abilites.Alquitran:
+                break;
+            case Abilites.PEM:
+                break;
+            case Abilites.Sierras:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    CmdSierras();
+                }      
+                break;
+        }
+
+
     }
     //[Command]
     void CmdFire()
@@ -100,5 +150,23 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
     }
 
+    void CmdLanzallamas()
+    {
+        //1. Instanciamos particulas. 
+        GameObject flame = Instantiate(prefabLanzallamas, emitterPos.position, Quaternion.identity * new Quaternion(0.0f, 90.0f, 0.0f, 1.0f));
+        Destroy(flame, 4.0f);
+        //2. Activate Trigger.
+        AreaLlamas.GetComponent<Collider>().enabled = true;
+        AreaLlamas.GetComponent<Collider>().isTrigger = true;
+    }
+
+    void CmdSierras()
+    {
+        for (int i = 0; i < Sierras.Length; i++)
+        {
+            Sierras[i].gameObject.GetComponent<Sierras>().Activated =
+                !Sierras[i].gameObject.GetComponent<Sierras>().Activated;
+        }
+    }
 
 }

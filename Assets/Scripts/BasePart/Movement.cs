@@ -30,9 +30,10 @@ public class Movement : NetworkBehaviour
 
     void FixedUpdate()
     {
-        WaitforPlayers h = FindObjectOfType<WaitforPlayers>();
+        //WaitforPlayers h = FindObjectOfType<WaitforPlayers>();
 
-        can_move = h.thing;
+        //can_move = h.thing;
+        can_move = true;
 
         if (!hasAuthority)
         {
