@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 152355521}
   - component: {fileID: 152355524}
   - component: {fileID: 152355523}
-  - component: {fileID: 152355522}
   - component: {fileID: 152355525}
+  - component: {fileID: 3805094149204536495}
   m_Layer: 0
   m_Name: Sierra
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152355520}
   m_LocalRotation: {x: -0, y: -0, z: 0.6920891, w: 0.72181207}
-  m_LocalPosition: {x: -0.35, y: 4.82, z: -15.31}
+  m_LocalPosition: {x: -0.35, y: 4.82, z: -18.48}
   m_LocalScale: {x: 8.893605, y: -0.18324392, z: 8.893605}
   m_Children: []
   m_Father: {fileID: 8065216911010035165}
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &152355522
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152355520}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &152355525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +94,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Activated: 0
+--- !u!135 &3805094149204536495
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152355520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.52
+  m_Center: {x: -0.0000008940697, y: -0.00012207031, z: -0.00000008940698}
 --- !u!1 &1040089003
 GameObject:
   m_ObjectHideFlags: 0
