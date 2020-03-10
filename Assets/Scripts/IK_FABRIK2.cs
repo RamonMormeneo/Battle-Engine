@@ -7,18 +7,15 @@ public class IK_FABRIK2 : MonoBehaviour
 {
     public Transform[] joints;
     public Transform target;
-
     private Vector3[] copy;
     private float[] distances;
     private bool done;
-
     float threshold_distance = 0.1f;
     public int maxIterations = 10;
 
     public GameObject base_;
-
-
     bool pelota = false;
+    float height = 0.0f;
 
     void Start()
     {
@@ -127,8 +124,7 @@ public class IK_FABRIK2 : MonoBehaviour
         if (pelota)
         {
             transform.position = new Vector3(
-                joints[3].transform.position.x, 81.99654f, joints[3].transform.position.z);
-
+                joints[3].transform.position.x, height, joints[3].transform.position.z);
 
             joints[0].transform.position = base_.transform.position;
 
@@ -146,6 +142,10 @@ public class IK_FABRIK2 : MonoBehaviour
         Destroy(gameObject.GetComponent<Rigidbody>());
 
         //collision.gameObject.transform.parent = joints[3].transform;
+        joints[3].transform.position = new Vector3(collision.contacts[0].point.x,
+                                                                    joints[3].transform.position.y,
+                                                                   collision.contacts[0].point.z);
+        height = collision.contacts[0].point.y;
 
         //transform.parent = joints[3].transform;
 

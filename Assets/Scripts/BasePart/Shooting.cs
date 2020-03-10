@@ -124,11 +124,10 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         bullet.GetComponent<IK_FABRIK2>().base_ = gameObject;
 
         // add velocity
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100.0f;
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 50.0f;
 
-        Destroy(bullet.GetComponent<IK_FABRIK2>(), 15.0f);
-        Destroy(cadenas, 15.0f);
-
+        Destroy(bullet.GetComponent<IK_FABRIK2>(), 10.0f);
+        Destroy(cadenas, 10.0f);
 
         //Spawn teh bullet on the clients
         //NetworkServer.Spawn(cadenas);
