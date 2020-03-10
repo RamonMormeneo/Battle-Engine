@@ -14,7 +14,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 
     //El gancho y el disparo basico tendrian que tenerse siempre como habilidades comunes. 
     //Las demas adicionales? 
-    public enum Abilites { Lanzallas, PEM, Alquitran, Sierras }
+    public enum Abilites { Lanzallas, PEM, Alquitran, Sierras, Gancho }
 
     //Objects: 
     public GameObject [] Sierras;
@@ -24,10 +24,12 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 
     //CD: 
     private float CDLanzallamas = 4.0f;
+    private float CDGancho = 10.0f;
 
     //Abilites
     public Abilites abilities;
     private bool GOINGCD = false;
+    private bool GOINGCDGANCHO = false;
 
     void Start()
     {
@@ -47,11 +49,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
             //CmdAlquitran(50);
 
         }
-        if (Input.GetMouseButtonDown(0)) //Boton izquierdo disparamos gancho.
-        {
-            //Switch: Abilities.
-            CmdGancho();
-        }
+       
 
         // Entrada a escoger de habilidad.
         switch (abilities)
@@ -84,6 +82,22 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
                 {
                     CmdSierras();
                 }      
+                break;
+            case Abilites.Gancho:
+                if (Input.GetMouseButtonDown(0) && GOINGCDGANCHO == false) //Boton izquierdo disparamos gancho.
+                {
+                    CmdGancho();
+                    CDGancho = 10.0f;
+                    GOINGCDGANCHO = true;
+                }
+                if(GOINGCDGANCHO)
+                {
+                    CDGancho -= Time.deltaTime;
+                    if(CDGancho <= 0.0f)
+                    {                       
+                        GOINGCDGANCHO = false;
+                    }            
+                }
                 break;
         }
 
@@ -124,9 +138,9 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         bullet.GetComponent<IK_FABRIK2>().base_ = gameObject;
 
         // add velocity
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 50.0f;
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100.0f;
 
-        Destroy(bullet.GetComponent<IK_FABRIK2>(), 10.0f);
+        Destroy(bullet, 10.0f);
         Destroy(cadenas, 10.0f);
 
         //Spawn teh bullet on the clients

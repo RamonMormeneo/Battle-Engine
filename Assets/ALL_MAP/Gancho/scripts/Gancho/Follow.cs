@@ -8,14 +8,21 @@ public class Follow : MonoBehaviour
     GameObject actualPlayer;
     float timer = 16.0f;
 
-    void Update()
+    void LateUpdate()
     {
-        if (follow_player) {
-
+        if (follow_player && actualPlayer != null) 
+        {
             timer -= Time.deltaTime;
+            gameObject.GetComponent<Rigidbody>().constraints =
+            RigidbodyConstraints.FreezeRotationX |
+            RigidbodyConstraints.FreezeRotationZ;
+            //Follow Ball
             transform.position = actualPlayer.transform.position;
-            if(timer <= 0)
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), actualPlayer.GetComponent<Collider>());
+            if (timer <= 0)
             {
+                gameObject.GetComponent<Rigidbody>().constraints =
+                RigidbodyConstraints.None;
                 follow_player = false;
                 timer = 16.0f;
             }

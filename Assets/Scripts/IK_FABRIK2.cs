@@ -125,10 +125,7 @@ public class IK_FABRIK2 : MonoBehaviour
         {
             transform.position = new Vector3(
                 joints[3].transform.position.x, height, joints[3].transform.position.z);
-
             joints[0].transform.position = base_.transform.position;
-
-
         }
 
 
@@ -138,23 +135,25 @@ public class IK_FABRIK2 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        Destroy(gameObject.GetComponent<Rigidbody>());
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject.GetComponent<Rigidbody>());
+            joints[3].transform.position = new Vector3(collision.contacts[0].point.x,
+                                                                        joints[3].transform.position.y,
+                                                                       collision.contacts[0].point.z);
+            height = collision.contacts[0].point.y;
+            pelota = true;
+        }
+        else
+        {
+            Destroy(gameObject.GetComponent<Rigidbody>());
+            joints[3].transform.position = new Vector3(collision.contacts[0].point.x,
+                                                                        joints[3].transform.position.y,
+                                                                       collision.contacts[0].point.z);
+            height = collision.contacts[0].point.y;
+            pelota = true;
+        }
 
-        //collision.gameObject.transform.parent = joints[3].transform;
-        joints[3].transform.position = new Vector3(collision.contacts[0].point.x,
-                                                                    joints[3].transform.position.y,
-                                                                   collision.contacts[0].point.z);
-        height = collision.contacts[0].point.y;
-
-        //transform.parent = joints[3].transform;
-
-        pelota = true;
-
-        //Destroy(gameObject.GetComponent<Rigidbody>());
-
-        //Destroy(gameObject.GetComponent<Rigidbody>());
-        //transform.position = collision.contacts[0].point;
     }
 
 }
