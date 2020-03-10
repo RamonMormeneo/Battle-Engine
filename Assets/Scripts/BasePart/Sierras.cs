@@ -11,17 +11,15 @@ public class Sierras : MonoBehaviour
         {
             //1. Rotate:     
             transform.Rotate(Vector3.up * 2.0f);
+            //print("Ostia");
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            //Hacer daño al enemigo. 
-            //Empujarle con una fuerza. 
-            collision.gameObject.GetComponent<Health>().currentHealth -= 30;
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 30.0f, ForceMode.Impulse);
-            print("OSTIA");
-        }
-    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    collision.gameObject.GetComponent<Health>().currentHealth -= 30;
+    //    collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 30.0f, ForceMode.Impulse);
+    //    print("Ostia");
+    //}
+
 }
