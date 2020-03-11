@@ -36,9 +36,7 @@ public class Movement : MonoBehaviour
 
         //can_move = h.thing;
         can_move = true;
-
-       
-        
+      
         if (Cam.activeSelf == true && can_move)
         {
             float turn = Input.GetAxis("Horizontal");
@@ -108,14 +106,7 @@ public class Movement : MonoBehaviour
                 body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply);
             }
                
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            body.AddForce(transform.forward * -1800.0f, ForceMode.Impulse);
-        }
-
-
+        }   
     }
     private void OnCollisionEnter(Collision collision)
 

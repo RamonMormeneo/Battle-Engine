@@ -35,24 +35,32 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     private bool GOINGCD = false;
     private bool GOINGCDGANCHO = false;
 
+    private Rigidbody body;
+
     void Start()
     {
+        body = GetComponent<Rigidbody>();
     }
-    //Deberiamos hacer un switch para escoger las habilidades. 
+
     void Update()
     {
         //if (!isLocalPlayer)
         //{
         //    return;
         //}
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             //Switch: Abilities.
             CmdFire();
-
         }
 
-        //Torreta gira con la camara: 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            body.AddForce(transform.forward * -60000.0f, ForceMode.Impulse);
+        }
+
+
+        //Torreta gira con la camara: //Try: not working.
         Torreta.transform.localEulerAngles =
             new Vector3(Torreta.transform.localEulerAngles.x,
             cam.transform.localEulerAngles.y,
