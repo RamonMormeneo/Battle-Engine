@@ -727,6 +727,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 22021460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &22636446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22636448}
+  - component: {fileID: 22636447}
+  m_Layer: 0
+  m_Name: CAIDA_MUERTE_PUENTE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &22636447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22636446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 302.1197, y: 10, z: 739.3982}
+  m_Center: {x: 26.059875, y: 0, z: 94.43642}
+--- !u!4 &22636448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22636446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -144.9, y: 25.6, z: 261}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &27508482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18513,7 +18557,6 @@ GameObject:
   - component: {fileID: 714497596}
   - component: {fileID: 714497595}
   - component: {fileID: 714497594}
-  - component: {fileID: 714497593}
   m_Layer: 0
   m_Name: Box019
   m_TagString: Untagged
@@ -18535,19 +18578,6 @@ Transform:
   m_Father: {fileID: 190088664}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -36.954002}
---- !u!65 &714497593
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714497591}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.039873872, y: 0.038927473, z: 0.036878027}
-  m_Center: {x: 0.000000059604645, y: 0, z: 0.018439006}
 --- !u!65 &714497594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19208,6 +19238,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 726119237}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &726492954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726492956}
+  - component: {fileID: 726492955}
+  m_Layer: 0
+  m_Name: COLISIONES_FUERA (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &726492955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726492954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1461.4557, y: 276.2511, z: 169.89877}
+  m_Center: {x: 168.65656, y: -14.425568, z: -84.44939}
+--- !u!4 &726492956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726492954}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 868, y: 89, z: 461}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &734001226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31373,6 +31447,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1143207185}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1152596128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152596130}
+  - component: {fileID: 1152596129}
+  m_Layer: 0
+  m_Name: COLISIONES_FUERA (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1152596129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152596128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1461.4557, y: 276.2511, z: 169.89877}
+  m_Center: {x: 168.65656, y: -14.425568, z: -84.44939}
+--- !u!4 &1152596130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152596128}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -264, y: 89, z: 461}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1153103420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34428,6 +34546,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1235061645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1235061647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134620, guid: c4e08389932df3947bcca85153074d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1235061645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1235061648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235061647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: e97528df4fe58c34f9e5f67e794b409d, type: 3}
 --- !u!1001 &1236644098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38115,6 +38253,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1366992669}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1366992671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 149536, guid: 10002675cafa69647a631734c4c318f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1366992669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1366992672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366992671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.745856, y: 7.0723157, z: 3.534518}
+  m_Center: {x: -0.011781217, y: -0.02070653, z: -0.06370413}
 --- !u!1001 &1371148160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39369,6 +39526,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1434074418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1437277917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1437277919}
+  - component: {fileID: 1437277918}
+  m_Layer: 0
+  m_Name: CAIDA_MUERTE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1437277918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437277917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 250, y: 15, z: 250}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1437277919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437277917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 234, y: 25.6, z: 261}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1438599344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46631,6 +46832,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1707213425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1707213427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134620, guid: c4e08389932df3947bcca85153074d8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1707213425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1707213428
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707213427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: e97528df4fe58c34f9e5f67e794b409d, type: 3}
 --- !u!1001 &1712030122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52558,6 +52779,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1903134439}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1910029944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910029946}
+  - component: {fileID: 1910029945}
+  m_Layer: 0
+  m_Name: COLISIONES_FUERA (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1910029945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910029944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1461.4557, y: 276.2511, z: 144.86935}
+  m_Center: {x: 168.65656, y: -14.425568, z: -96.964096}
+--- !u!4 &1910029946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910029944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 152, y: 89, z: 835}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1911577908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55575,6 +55840,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2024759624}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2039508681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2039508683}
+  - component: {fileID: 2039508682}
+  m_Layer: 0
+  m_Name: COLISIONES_FUERA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2039508682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039508681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1461.4557, y: 276.2511, z: 169.89877}
+  m_Center: {x: 168.65656, y: -14.425568, z: -84.44939}
+--- !u!4 &2039508683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039508681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 152, y: 89, z: -96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2040435002
 PrefabInstance:
   m_ObjectHideFlags: 0
