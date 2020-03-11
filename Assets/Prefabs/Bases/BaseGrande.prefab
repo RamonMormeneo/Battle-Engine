@@ -1275,6 +1275,8 @@ MonoBehaviour:
   Bullet_Alquitran: {fileID: 6681722682575932793, guid: 18e8cd12c7bf3674aae7e5e03a5c9d93,
     type: 3}
   Bullet_Spawn: {fileID: 5024739018530857346}
+  Torreta: {fileID: 5462116553830546469}
+  cam: {fileID: 8065216912384426962}
   Sierras:
   - {fileID: 152355520}
   prefabLanzallamas: {fileID: 4570354212013248113, guid: 9a0f137492334cd4fbd9913b8c54fc8f,
@@ -3276,17 +3278,17 @@ PrefabInstance:
     - target: {fileID: 6912073491309135535, guid: ddd96a96d848a4146a1ebd62c20762c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.35
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 6912073491309135535, guid: ddd96a96d848a4146a1ebd62c20762c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.19
+      value: 13.63
       objectReference: {fileID: 0}
     - target: {fileID: 6912073491309135535, guid: ddd96a96d848a4146a1ebd62c20762c2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.8
+      value: -5.31
       objectReference: {fileID: 0}
     - target: {fileID: 6912073491309135535, guid: ddd96a96d848a4146a1ebd62c20762c2,
         type: 3}
@@ -3364,6 +3366,12 @@ Transform:
 --- !u!4 &5462116553830834181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6912073491309135535, guid: ddd96a96d848a4146a1ebd62c20762c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1450660624924026538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5462116553830546469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6912073491309632143, guid: ddd96a96d848a4146a1ebd62c20762c2,
     type: 3}
   m_PrefabInstance: {fileID: 1450660624924026538}
   m_PrefabAsset: {fileID: 0}

@@ -11,6 +11,10 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     public GameObject Bola_PEM;   
     public GameObject Bullet_Alquitran;
     public Transform Bullet_Spawn;
+    public GameObject Torreta;
+
+    //Camera: 
+    public GameObject cam;
 
     //El gancho y el disparo basico tendrian que tenerse siempre como habilidades comunes. 
     //Las demas adicionales? 
@@ -44,12 +48,13 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Switch: Abilities.
-            //CmdFire();
-            //CmdPEM(50);
-            //CmdAlquitran(50);
+            CmdFire();
 
         }
-       
+
+        //Torreta gira con la camara: 
+        Torreta.transform.eulerAngles = cam.transform.eulerAngles;
+
 
         // Entrada a escoger de habilidad.
         switch (abilities)
@@ -107,14 +112,16 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     void CmdFire()
     {
         GameObject bullet = (GameObject)Instantiate(Bullet_Prefab, Bullet_Spawn.position, Bullet_Spawn.rotation);
+        bullet.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 250.0f, ForceMode.Impulse);
+        bullet.GetComponent<Rigidbody>().AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
 
         // add velocity
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100.0f;
+        //bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100.0f;
 
         //Spawn teh bullet on the clients
         //NetworkServer.Spawn(bullet);
         //Destroy (2s)
-        Destroy(bullet, 2);
+        //Destroy(bullet, 2);
 
     }
 
