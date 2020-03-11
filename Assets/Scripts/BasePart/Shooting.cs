@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
+using System.IO;
 using Photon.Pun;
 
 public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
@@ -127,7 +128,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     //[Command]
     void CmdFire()
     {
-        GameObject bullet = (GameObject)Instantiate(Bullet_Prefab, Bullet_Spawn.position, Bullet_Spawn.rotation);
+        GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet(Online)"), Bullet_Spawn.position, Bullet_Spawn.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 250.0f, ForceMode.Impulse);
         bullet.GetComponent<Rigidbody>().AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
 
