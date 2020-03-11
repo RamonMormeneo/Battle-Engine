@@ -53,7 +53,10 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         }
 
         //Torreta gira con la camara: 
-        Torreta.transform.eulerAngles = cam.transform.eulerAngles;
+        Torreta.transform.localEulerAngles =
+            new Vector3(Torreta.transform.localEulerAngles.x,
+            cam.transform.localEulerAngles.y,
+            Torreta.transform.localEulerAngles.z);
 
 
         // Entrada a escoger de habilidad.
@@ -89,20 +92,20 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
                 }      
                 break;
             case Abilites.Gancho:
-                if (Input.GetMouseButtonDown(0) && GOINGCDGANCHO == false) //Boton izquierdo disparamos gancho.
-                {
-                    CmdGancho();
-                    CDGancho = 10.0f;
-                    GOINGCDGANCHO = true;
-                }
-                if(GOINGCDGANCHO)
-                {
-                    CDGancho -= Time.deltaTime;
-                    if(CDGancho <= 0.0f)
-                    {                       
-                        GOINGCDGANCHO = false;
-                    }            
-                }
+                //if (Input.GetMouseButtonDown(0) && GOINGCDGANCHO == false) //Boton izquierdo disparamos gancho.
+                //{
+                //    CmdGancho();
+                //    CDGancho = 10.0f;
+                //    GOINGCDGANCHO = true;
+                //}
+                //if(GOINGCDGANCHO)
+                //{
+                //    CDGancho -= Time.deltaTime;
+                //    if(CDGancho <= 0.0f)
+                //    {                       
+                //        GOINGCDGANCHO = false;
+                //    }            
+                //}
                 break;
         }
 
