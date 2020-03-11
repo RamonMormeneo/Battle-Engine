@@ -8,6 +8,7 @@ public class PlayerCon : MonoBehaviour
 {
     private PhotonView PV;
     private bool find = false;
+    public GameObject myAvatar;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +26,17 @@ public class PlayerCon : MonoBehaviour
                 }
             }
            
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BaseGrande(Online)"), GameControler.GS.spawnpoint[SpawnPicker].transform.position, GameControler.GS.spawnpoint[SpawnPicker].transform.rotation, 0);
+           myAvatar= PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BaseGrande(Online)"), GameControler.GS.spawnpoint[SpawnPicker].transform.position, GameControler.GS.spawnpoint[SpawnPicker].transform.rotation, 0);
+           
+            
             GameControler.GS.pickeppoints[SpawnPicker] = GameControler.GS.spawnpoint[SpawnPicker];
+            
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
     void NewRand()
     {
