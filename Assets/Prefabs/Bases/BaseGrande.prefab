@@ -1236,7 +1236,7 @@ MonoBehaviour:
   can_move: 0
   BASELIGERA: 0
   BASEMEDIANA: 0
-  BASEGRANDE: 0
+  BASEGRANDE: 1
   Girar_Ruedas: 0
 --- !u!114 &604030006138252907
 MonoBehaviour:
