@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class Base_Rotator : MonoBehaviour
 {
+    public bool LIGHT;
     void Update()
     {
-        transform.Rotate(Vector3.up * 1.0f * Time.deltaTime); 
+        if (LIGHT)
+        {
+            transform.Rotate(Vector3.up * 16.0f * Time.deltaTime);
+        } 
+        else
+        {
+            transform.Rotate(Vector3.up * 1.0f * Time.deltaTime);
+        }
+        
     }
 }
