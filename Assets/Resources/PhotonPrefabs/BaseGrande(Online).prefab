@@ -209,7 +209,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: 98caaac1a13eaad48aef30d6ef48ed05, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 1
+  weight: 0.358
   priority: 0
 --- !u!114 &8352291801317638867
 MonoBehaviour:
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 3270909924463579637}
   - component: {fileID: 4449391700473479565}
   - component: {fileID: 210665914591081220}
+  - component: {fileID: 446463309489771187}
   - component: {fileID: 3653070809875993053}
   - component: {fileID: 8131786588736621747}
   - component: {fileID: 5416851372555800538}
@@ -421,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2d8867d1a660a4c8bd4c9d170b7757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet_Prefab: {fileID: 6681722682575932793, guid: 09b00390506528647b1c501cb0f629f3,
+  Bullet_Prefab: {fileID: 510915055989949904, guid: 29f7038feedecf44ab8b01472644a837,
     type: 3}
   Bullet_Gancho: {fileID: 6681722682575932793, guid: e3f80069e711b504c9f5a1874837c7b6,
     type: 3}
@@ -440,6 +441,22 @@ MonoBehaviour:
   emitterPos: {fileID: 8352291802640645426}
   AreaLlamas: {fileID: 8352291800969318063}
   abilities: 4
+--- !u!114 &446463309489771187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018779389919688514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ede35b57f6db004390be5406b18ac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  Healthbar: {fileID: 4484031325878415709}
+  maxLife: 3
+  inictrans: {fileID: 0}
 --- !u!65 &3653070809875993053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1952,6 +1969,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3924e068328a2bc40b3974658391b83a, type: 3}
+--- !u!224 &4484031325878415709 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3482097931391524175, guid: 3924e068328a2bc40b3974658391b83a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1038254697066146834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4484031326070789800 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3482097931718130362, guid: 3924e068328a2bc40b3974658391b83a,

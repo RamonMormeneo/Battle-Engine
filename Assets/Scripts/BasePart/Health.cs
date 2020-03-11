@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Health : NetworkBehaviour
 {
     public const int maxHealth = 100;
+    
    [SyncVar (hook = "onChangeHealth")] public int currentHealth = maxHealth;
     public RectTransform Healthbar;
     private NetworkStartPosition[] spawnPoints;

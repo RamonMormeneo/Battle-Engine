@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
+using Photon.Pun;
 
 public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     public GameObject Bullet_Alquitran;
     public Transform Bullet_Spawn;
     public GameObject Torreta;
-
+    private PhotonView PV;
     //Camera: 
     public GameObject cam;
 
@@ -40,6 +41,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        PV = GetComponent<PhotonView>();
     }
 
     void Update()
@@ -48,73 +50,76 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         //{
         //    return;
         //}
-        if (Input.GetMouseButtonDown(0))
+        if (PV.IsMine)
         {
-            //Switch: Abilities.
-            CmdFire();
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Switch: Abilities.
+                CmdFire();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            body.AddForce(transform.forward * -60000.0f, ForceMode.Impulse);
-        }
-
-
-        //Torreta gira con la camara: //Try: not working.
-        Torreta.transform.localEulerAngles =
-            new Vector3(Torreta.transform.localEulerAngles.x,
-            cam.transform.localEulerAngles.y,
-            Torreta.transform.localEulerAngles.z);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                body.AddForce(transform.forward * -60000.0f, ForceMode.Impulse);
+            }
 
 
-        // Entrada a escoger de habilidad.
-        switch (abilities)
-        {
-            case Abilites.Lanzallas:
-                //Code to shoot here:
-                if (Input.GetKeyDown(KeyCode.Space) && CDLanzallamas == 4.0f && GOINGCD == false)
-                {
-                    CmdLanzallamas();
-                    print("SHOOT");
-                    GOINGCD = true;
-                }
-                if(GOINGCD)
-                {
-                    CDLanzallamas -= Time.deltaTime;
-                    if(CDLanzallamas <= 0.0f)
+            //Torreta gira con la camara: //Try: not working.
+            Torreta.transform.localEulerAngles =
+                new Vector3(Torreta.transform.localEulerAngles.x,
+                cam.transform.localEulerAngles.y,
+                Torreta.transform.localEulerAngles.z);
+
+
+            // Entrada a escoger de habilidad.
+            switch (abilities)
+            {
+                case Abilites.Lanzallas:
+                    //Code to shoot here:
+                    if (Input.GetKeyDown(KeyCode.Space) && CDLanzallamas == 4.0f && GOINGCD == false)
                     {
-                        CDLanzallamas = 4.0f;
-                        AreaLlamas.GetComponent<Collider>().enabled = false;
-                        GOINGCD = false;
+                        CmdLanzallamas();
+                        print("SHOOT");
+                        GOINGCD = true;
                     }
-                }
-                break;
-            case Abilites.Alquitran:
-                break;
-            case Abilites.PEM:
-                break;
-            case Abilites.Sierras:
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    CmdSierras();
-                }      
-                break;
-            case Abilites.Gancho:
-                //if (Input.GetMouseButtonDown(0) && GOINGCDGANCHO == false) //Boton izquierdo disparamos gancho.
-                //{
-                //    CmdGancho();
-                //    CDGancho = 10.0f;
-                //    GOINGCDGANCHO = true;
-                //}
-                //if(GOINGCDGANCHO)
-                //{
-                //    CDGancho -= Time.deltaTime;
-                //    if(CDGancho <= 0.0f)
-                //    {                       
-                //        GOINGCDGANCHO = false;
-                //    }            
-                //}
-                break;
+                    if (GOINGCD)
+                    {
+                        CDLanzallamas -= Time.deltaTime;
+                        if (CDLanzallamas <= 0.0f)
+                        {
+                            CDLanzallamas = 4.0f;
+                            AreaLlamas.GetComponent<Collider>().enabled = false;
+                            GOINGCD = false;
+                        }
+                    }
+                    break;
+                case Abilites.Alquitran:
+                    break;
+                case Abilites.PEM:
+                    break;
+                case Abilites.Sierras:
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        CmdSierras();
+                    }
+                    break;
+                case Abilites.Gancho:
+                    //if (Input.GetMouseButtonDown(0) && GOINGCDGANCHO == false) //Boton izquierdo disparamos gancho.
+                    //{
+                    //    CmdGancho();
+                    //    CDGancho = 10.0f;
+                    //    GOINGCDGANCHO = true;
+                    //}
+                    //if(GOINGCDGANCHO)
+                    //{
+                    //    CDGancho -= Time.deltaTime;
+                    //    if(CDGancho <= 0.0f)
+                    //    {                       
+                    //        GOINGCDGANCHO = false;
+                    //    }            
+                    //}
+                    break;
+            }
         }
 
 
