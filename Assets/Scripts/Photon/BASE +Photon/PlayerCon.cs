@@ -13,25 +13,33 @@ public class PlayerCon : MonoBehaviour
     {
         PV = GetComponent<PhotonView>();
         int SpawnPicker = Random.Range(0, GameControler.GS.spawnpoint.Length);
-       for(int i = GameControler.GS.pickeppoints.Length;i <= 0; i--)
-        {
-            if(SpawnPicker== GameControler.GS.pickeppoints[i])
-            {
-                NewRand(i);
-            }
-        }
+       
+       
         if (PV.IsMine)
         {
+            for(int i =0;i >= 4; i++)
+            {
+                if(GameControler.GS.spawnpoint[SpawnPicker] == GameControler.GS.pickeppoints[i])
+                {
+                    NewRand();
+                }
+            }
+           
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BASE2"), GameControler.GS.spawnpoint[SpawnPicker].transform.position, GameControler.GS.spawnpoint[SpawnPicker].transform.rotation, 0);
+            GameControler.GS.pickeppoints[SpawnPicker] = GameControler.GS.spawnpoint[SpawnPicker];
         }
     }
-    void NewRand(int i)
+    void NewRand()
     {
         int SpawnPicker = Random.Range(0, GameControler.GS.spawnpoint.Length);
-        if (SpawnPicker == GameControler.GS.pickeppoints[i])
+        for (int i = 0; i >= 4; i++)
         {
-            NewRand(i);
+            if (GameControler.GS.spawnpoint[SpawnPicker] == GameControler.GS.pickeppoints[i])
+            {
+                NewRand();
+            }
         }
+
     }
     // Update is called once per frame
     void Update()

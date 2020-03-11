@@ -4,8 +4,10 @@ using Photon.Pun;
 using UnityEngine;
 using System.IO;
 
-public class MovemenPhoton : MonoBehaviour
+public class MovemenPhoton : MonoBehaviourPun
 {
+    private PhotonView PV;
+
     public GameObject Cam;
 
     public Vector3 move;
@@ -25,46 +27,50 @@ public class MovemenPhoton : MonoBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody>();
-       
+        PV = GetComponent<PhotonView>();
 
     }
     // Update is called once per frame
     void Update()
     {
-        float turn = Input.GetAxis("Horizontal");
-        transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
-
-
-        float forwards = -(Input.GetAxis("Vertical"));
-
-        if (forwards > 0)
+        if(PV.IsMine)
         {
-            Girar_Ruedas = true;
-            speed = speed + acceleration * Time.deltaTime;
-        }
+            float turn = Input.GetAxis("Horizontal");
+            transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
 
-        else if (forwards < 0)
-        {
-            Girar_Ruedas = true;
-            speed = speed - acceleration * Time.deltaTime;
-        }
 
-        else
-        {
-            Girar_Ruedas = false;
-            if (speed > 0)
+            float forwards = -(Input.GetAxis("Vertical"));
+
+            if (forwards > 0)
             {
-                speed = speed - brake * Time.deltaTime;
+                Girar_Ruedas = true;
+                speed = speed + acceleration * Time.deltaTime;
             }
+
+            else if (forwards < 0)
+            {
+                Girar_Ruedas = true;
+                speed = speed - acceleration * Time.deltaTime;
+            }
+
             else
             {
-                speed = speed + brake * Time.deltaTime;
+                Girar_Ruedas = false;
+                if (speed > 0)
+                {
+                    speed = speed - brake * Time.deltaTime;
+                }
+                else
+                {
+                    speed = speed + brake * Time.deltaTime;
+                }
             }
-        }
 
-        speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
-        Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
-        //transform.Translate(velocity * Time.deltaTime, Space.Self); // Old movement
-        body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply); // New movement
+            speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
+            Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
+            //transform.Translate(velocity * Time.deltaTime, Space.Self); // Old movement
+            body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply); // New movement
+        }
+        
     }
 }

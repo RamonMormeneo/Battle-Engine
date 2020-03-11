@@ -2161,7 +2161,7 @@ PrefabInstance:
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 84.1411
+      value: 100.92
       objectReference: {fileID: 0}
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
@@ -12194,17 +12194,17 @@ PrefabInstance:
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -238.6
+      value: -224.74
       objectReference: {fileID: 0}
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 88.13
+      value: 105.56
       objectReference: {fileID: 0}
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 544.4254
+      value: 532.27
       objectReference: {fileID: 0}
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
@@ -28806,7 +28806,7 @@ PrefabInstance:
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 88.13
+      value: 104.63
       objectReference: {fileID: 0}
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
@@ -47092,7 +47092,7 @@ PrefabInstance:
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 68.94583
+      value: 150.7
       objectReference: {fileID: 0}
     - target: {fileID: 9025863327637634701, guid: ad2c9571b9f62474d8a56615c28e7090,
         type: 3}
@@ -58169,6 +58169,11 @@ MonoBehaviour:
   - {fileID: 1090591272}
   - {fileID: 1616875444}
   - {fileID: 489405228}
+  pickeppoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &2051661879
 Transform:
   m_ObjectHideFlags: 0

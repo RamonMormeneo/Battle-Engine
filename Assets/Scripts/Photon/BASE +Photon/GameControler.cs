@@ -6,7 +6,7 @@ public class GameControler : MonoBehaviour
 {
     public static GameControler GS;
     public Transform[] spawnpoint;
-    public int[] pickeppoints;
+    public Transform[] pickeppoints;
     private void OnEnable()
     {
         if(GameControler.GS ==null)
