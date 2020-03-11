@@ -73,7 +73,7 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     }
     private void LoadPlayer()
     {
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Base2"), transform.position, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerStart"), transform.position, Quaternion.identity, 0);
     }
     // Update is called once per frame
     void Update()

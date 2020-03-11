@@ -858,9 +858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8065216911010035165}
   - component: {fileID: 979186521957999513}
-  - component: {fileID: 1818251515529537573}
   - component: {fileID: 8143953623907889562}
-  - component: {fileID: 1005979654678559735}
   - component: {fileID: 4709390475540484931}
   - component: {fileID: 2911055709854048784}
   m_Layer: 0
@@ -925,20 +923,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1818251515529537573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8065216911010035164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39c072a20b632a74c9d7790c5c2c0640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 8065216911010035164}
-  turnSpeed: 4
 --- !u!114 &8143953623907889562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,29 +945,6 @@ MonoBehaviour:
   Bullet_Alquitran: {fileID: 6681722682575932793, guid: 18e8cd12c7bf3674aae7e5e03a5c9d93,
     type: 3}
   Bullet_Spawn: {fileID: 5024739018530857346}
---- !u!114 &1005979654678559735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8065216911010035164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bccdd1c2290c6b146a9e412557c97302, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cam: {fileID: 8065216912384426962}
-  move: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  maxSpeed: 35
-  acceleration: 5
-  brake: 5
-  turnSpeed: 45
-  speed: 0
-  speed_multiply: 0
-  can_move: 1
-  Girar_Ruedas: 1
 --- !u!65 &4709390475540484931
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 
-public class Movement : NetworkBehaviour
+public class Movement : MonoBehaviour
 {
     public GameObject Cam;
 
@@ -32,50 +32,46 @@ public class Movement : NetworkBehaviour
 
         can_move = h.thing;
 
-        if (!hasAuthority)
-        {
-            return;
-        }
+       
         
-        if (Cam.activeSelf == true && can_move)
+      
+          float turn = Input.GetAxis("Horizontal");
+          transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
+
+
+          float forwards = -(Input.GetAxis("Vertical"));
+
+          if (forwards > 0)
+          {
+            Girar_Ruedas = true;
+            speed = speed + acceleration * Time.deltaTime;
+          }
+
+          else if (forwards < 0)
+          {
+             Girar_Ruedas = true;
+             speed = speed - acceleration * Time.deltaTime;
+          }
+
+        else
         {
-                float turn = Input.GetAxis("Horizontal");
-                transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
-
-
-                float forwards = -(Input.GetAxis("Vertical"));
-
-                if (forwards > 0)
-                {
-                    Girar_Ruedas = true;
-                    speed = speed + acceleration * Time.deltaTime;
-                }
-
-                else if (forwards < 0)
-                {
-                    Girar_Ruedas = true;
-                    speed = speed - acceleration * Time.deltaTime;
-                }
-
-                else
-                {
-                    Girar_Ruedas = false;
-                    if (speed > 0)
-                    {
-                        speed = speed - brake * Time.deltaTime;
-                    }
-                    else
-                    {
-                        speed = speed + brake * Time.deltaTime;
-                    }
-                }
-
-                speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
-                Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
-                //transform.Translate(velocity * Time.deltaTime, Space.Self); // Old movement
-                body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply); // New movement
-
+           Girar_Ruedas = false;
+            if (speed > 0)
+            {
+               speed = speed - brake * Time.deltaTime;
+            }
+            else
+            {
+              speed = speed + brake * Time.deltaTime;
+            }
         }
+
+        speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
+        Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
+                
+        body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply); // New movement
+
+       
 
         if (Input.GetKeyDown(KeyCode.E))
         {
