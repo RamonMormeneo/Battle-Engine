@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
+using Photon.Pun;
 
 public class Movement : MonoBehaviour
 {
     public GameObject Cam;
-
+    private PhotonView PV;
     public Vector3 move;
     public Vector3 velocity; 
     public float maxSpeed;  //No poner valores aqui, porque los del editor no se utilizaran. 
@@ -25,6 +26,7 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody>();
+        PV = GetComponent<PhotonView>();
         if (BASEMEDIANA)
             transform.eulerAngles = new Vector3(-90, 0.0f, 180);
     }
@@ -37,7 +39,7 @@ public class Movement : MonoBehaviour
         //can_move = h.thing;
         can_move = true;
       
-        if (Cam.activeSelf == true && can_move)
+        if (PV.IsMine&& can_move)
         {
             float turn = Input.GetAxis("Horizontal");
                 if (BASEMEDIANA)

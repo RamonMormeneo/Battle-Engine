@@ -25,7 +25,7 @@ public class PlayerCon : MonoBehaviour
                 }
             }
            
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BASE2"), GameControler.GS.spawnpoint[SpawnPicker].transform.position, GameControler.GS.spawnpoint[SpawnPicker].transform.rotation, 0);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BaseGrande(Online)"), GameControler.GS.spawnpoint[SpawnPicker].transform.position, GameControler.GS.spawnpoint[SpawnPicker].transform.rotation, 0);
             GameControler.GS.pickeppoints[SpawnPicker] = GameControler.GS.spawnpoint[SpawnPicker];
         }
     }
