@@ -9,7 +9,8 @@ public class Sierra_Collision : MonoBehaviour
         Debug.Log("HELLO??");
         if(collider.gameObject.tag == "Player")
         {
-                collider.gameObject.GetComponent<Health>().currentHealth -= 15;
+                collider.gameObject.GetComponent<HealtOnline>().currentHealth -= 15;
+            Debug.Log(collider.gameObject.GetComponent<HealtOnline>().currentHealth);
                 collider.gameObject.GetComponent<Rigidbody>().AddForce(-collider.transform.forward * 2500.0f, ForceMode.Impulse);
                 print("Ostia"); 
         }       

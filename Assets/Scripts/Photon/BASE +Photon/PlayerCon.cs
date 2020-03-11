@@ -27,8 +27,8 @@ public class PlayerCon : MonoBehaviour
             }
            
            myAvatar= PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BaseGrande(Online)"), GameControler.GS.spawnpoint[SpawnPicker].transform.position, GameControler.GS.spawnpoint[SpawnPicker].transform.rotation, 0);
-           
-            
+
+            myAvatar.transform.GetComponent<HealtOnline>().inictrans = GameControler.GS.spawnpoint[SpawnPicker].transform;
             GameControler.GS.pickeppoints[SpawnPicker] = GameControler.GS.spawnpoint[SpawnPicker];
             
         }

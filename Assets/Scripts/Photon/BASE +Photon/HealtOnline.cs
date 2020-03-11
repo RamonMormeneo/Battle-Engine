@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealtOnline : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class HealtOnline : MonoBehaviour
     public float maxLife = 3.0f;
     private PhotonView PV;
     public Transform inictrans;
+    public float currLive = 3.0f;
     // Start is called before the first frame update
     void Start()
     {
         PV = GetComponent<PhotonView>();
+        
 
     }
     public void TeakeDamge(int amount)
@@ -40,7 +43,18 @@ public class HealtOnline : MonoBehaviour
         {
             currentHealth = 100;
             Healthbar.sizeDelta = new Vector2(currentHealth * 2, Healthbar.sizeDelta.y);
-
+            transform.position = inictrans.position;
+            transform.rotation = inictrans.rotation;
+            currLive--;
+            if(currLive<=0)
+            {
+                PhotonNetwork.LeaveRoom();
+                while(PhotonNetwork.InRoom)
+                {
+                    
+                }
+                SceneManager.LoadScene(0);
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &152355521
 Transform:
   m_ObjectHideFlags: 0
@@ -1284,6 +1284,7 @@ MonoBehaviour:
   emitterPos: {fileID: 1040089004}
   AreaLlamas: {fileID: 1478233137}
   abilities: 4
+  abilites2: 0
 --- !u!65 &4709390475540484931
 BoxCollider:
   m_ObjectHideFlags: 0

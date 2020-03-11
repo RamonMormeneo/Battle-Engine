@@ -8,6 +8,7 @@ using Photon.Pun;
 public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 {
     public GameObject Bullet_Prefab;
+    private Movement mov;
     public GameObject Bullet_Gancho;
     public GameObject Cadenas;
     public GameObject Bola_PEM;   
@@ -20,7 +21,8 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 
     //El gancho y el disparo basico tendrian que tenerse siempre como habilidades comunes. 
     //Las demas adicionales? 
-    public enum Abilites { Lanzallas, PEM, Alquitran, Sierras, Gancho }
+    public enum Abilites {  PEM, Alquitran, Gancho }
+    public enum Abilites2 { Lanzallas, Sierras }
 
     //Objects: 
     public GameObject [] Sierras;
@@ -34,6 +36,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 
     //Abilites
     public Abilites abilities;
+    public Abilites2 abilites2;
     private bool GOINGCD = false;
     private bool GOINGCDGANCHO = false;
 
@@ -43,6 +46,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         PV = GetComponent<PhotonView>();
+        mov = GetComponent<Movement>();
     }
 
     void Update()
@@ -73,53 +77,68 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 
 
             // Entrada a escoger de habilidad.
-            switch (abilities)
-            {
-                case Abilites.Lanzallas:
-                    //Code to shoot here:
-                    if (Input.GetKeyDown(KeyCode.Space) && CDLanzallamas == 4.0f && GOINGCD == false)
-                    {
-                        CmdLanzallamas();
-                        print("SHOOT");
-                        GOINGCD = true;
-                    }
-                    if (GOINGCD)
-                    {
-                        CDLanzallamas -= Time.deltaTime;
-                        if (CDLanzallamas <= 0.0f)
+          
+                switch (abilites2)
+                {
+                    case Abilites2.Lanzallas:
+                        //Code to shoot here:
+                        if (Input.GetKeyDown(KeyCode.E) && CDLanzallamas == 4.0f && GOINGCD == false)
                         {
-                            CDLanzallamas = 4.0f;
-                            AreaLlamas.GetComponent<Collider>().enabled = false;
-                            GOINGCD = false;
+                         
+                            CmdLanzallamas();
+                            print("SHOOT");
+                            GOINGCD = true;
+                        mov.can_move = false;
                         }
-                    }
-                    break;
-                case Abilites.Alquitran:
-                    break;
-                case Abilites.PEM:
-                    break;
-                case Abilites.Sierras:
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        CmdSierras();
-                    }
-                    break;
-                case Abilites.Gancho:
-                    //if (Input.GetMouseButtonDown(0) && GOINGCDGANCHO == false) //Boton izquierdo disparamos gancho.
-                    //{
-                    //    CmdGancho();
-                    //    CDGancho = 10.0f;
-                    //    GOINGCDGANCHO = true;
-                    //}
-                    //if(GOINGCDGANCHO)
-                    //{
-                    //    CDGancho -= Time.deltaTime;
-                    //    if(CDGancho <= 0.0f)
-                    //    {                       
-                    //        GOINGCDGANCHO = false;
-                    //    }            
-                    //}
-                    break;
+                        if (GOINGCD)
+                        {
+                            CDLanzallamas -= Time.deltaTime;
+                            if (CDLanzallamas <= 0.0f)
+                            {
+                                CDLanzallamas = 4.0f;
+                                AreaLlamas.GetComponent<Collider>().enabled = false;
+                                GOINGCD = false;
+                            mov.can_move = true;
+                            }
+                        }
+                        break;
+                    case Abilites2.Sierras:
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            CmdSierras();
+                        }
+                        break;
+                   
+                }
+            
+            if(Input.GetMouseButtonDown(1))
+            {
+                switch (abilities)
+                {
+                    
+                    case Abilites.Alquitran:
+                        CmdAlquitran(100);
+                        break;
+                    case Abilites.PEM:
+                        CmdPEM(100);
+                        break;
+                    case Abilites.Gancho:
+                        //if (Input.GetMouseButtonDown(0) && GOINGCDGANCHO == false) //Boton izquierdo disparamos gancho.
+                        //{
+                        //    CmdGancho();
+                        //    CDGancho = 10.0f;
+                        //    GOINGCDGANCHO = true;
+                        //}
+                        //if(GOINGCDGANCHO)
+                        //{
+                        //    CDGancho -= Time.deltaTime;
+                        //    if(CDGancho <= 0.0f)
+                        //    {                       
+                        //        GOINGCDGANCHO = false;
+                        //    }            
+                        //}
+                        break;
+                }
             }
         }
 
@@ -177,20 +196,21 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 
     void CmdPEM(float F)
     {
-        GameObject obj = Instantiate(Bola_PEM, Bullet_Spawn.position, Bola_PEM.transform.rotation); // Instanciar tiro.
+        GameObject obj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet_PEM"), Bullet_Spawn.position, Bola_PEM.transform.rotation); // Instanciar tiro.
         obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
     }
 
     void CmdAlquitran(float F)
     {
-        GameObject obj = Instantiate(Bullet_Alquitran, Bullet_Spawn.position, Bullet_Alquitran.transform.rotation); // Instanciar tiro.
+        GameObject obj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet_Alquitran"), Bullet_Spawn.position, Bullet_Alquitran.transform.rotation); // Instanciar tiro.
         obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
     }
 
     void CmdLanzallamas()
     {
         //1. Instanciamos particulas. 
-        GameObject flame = Instantiate(prefabLanzallamas, emitterPos.position, Quaternion.identity * new Quaternion(0.0f, 90.0f, 0.0f, 1.0f));
+        GameObject flame = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "FlameThrower"), emitterPos.position, emitterPos.rotation);
+        flame.transform.parent = transform;
         Destroy(flame, 4.0f);
         //2. Activate Trigger.
         AreaLlamas.GetComponent<Collider>().enabled = true;
