@@ -18,13 +18,15 @@ public class Movement : NetworkBehaviour
     private Rigidbody body;
     public float speed_multiply;
     public bool can_move = false;
+    public bool BASELIGERA, BASEMEDIANA, BASEGRANDE;
 
     public bool Girar_Ruedas = false;
 
     private void Start()
     {
         body = GetComponent<Rigidbody>();
-
+        if (BASEMEDIANA)
+            transform.eulerAngles = new Vector3(-90, 0.0f, 180);
     }
 
 
@@ -42,8 +44,17 @@ public class Movement : NetworkBehaviour
         
         if (Cam.activeSelf == true && can_move)
         {
-                float turn = Input.GetAxis("Horizontal");
-                transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
+            float turn = Input.GetAxis("Horizontal");
+                if (BASEMEDIANA)
+                {
+                    
+                    transform.Rotate(0.0f, 0, turn * turnSpeed * Time.deltaTime);
+                } 
+                else
+                {
+                    transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
+                }
+
 
                 float forwards = -(Input.GetAxis("Vertical"));
 
@@ -83,9 +94,23 @@ public class Movement : NetworkBehaviour
             //}
 
             Vector3 velocity = new Vector3(0.0f, 0.0f, speed);
-                //transform.Translate(velocity * Time.deltaTime, Space.Self); // Old movement
-                body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply); // New movement
+            //transform.Translate(velocity * Time.deltaTime, Space.Self); // Old movement
 
+            if (BASELIGERA)
+            {
+                body.MovePosition(transform.position - transform.right * speed * Time.deltaTime * speed_multiply);
+            }
+                
+            if(BASEMEDIANA)
+            {
+                body.MovePosition(transform.position - transform.right * speed * Time.deltaTime * speed_multiply);
+            }
+
+            if (BASEGRANDE)
+            {
+                body.MovePosition(transform.position + transform.forward * speed * Time.deltaTime * speed_multiply);
+            }
+               
         }
 
         if (Input.GetKeyDown(KeyCode.E))
