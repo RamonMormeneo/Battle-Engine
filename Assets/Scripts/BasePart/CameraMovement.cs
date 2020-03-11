@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Networking;
+
 using UnityEngine;
 
-public class CameraMovement : NetworkBehaviour
+public class CameraMovement : MonoBehaviour
 {
     public GameObject Player;
 

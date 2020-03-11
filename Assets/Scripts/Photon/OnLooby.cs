@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class OnLooby : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
     public static OnLooby lobby;
 
     public GameObject BattleButton;
@@ -24,6 +23,7 @@ public class OnLooby : MonoBehaviourPunCallbacks
     }
     public override void OnConnectedToMaster()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
         BattleButton.SetActive(true);
     }
     public void OnBBClick()
@@ -59,10 +59,11 @@ public class OnLooby : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        if(PhotonNetwork.InRoom)
+        if (PhotonNetwork.InRoom)
         {
             Room myroom = PhotonNetwork.CurrentRoom;
             NumPlayers = myroom.PlayerCount;
         }
     }
+
 }

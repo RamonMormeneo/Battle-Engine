@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 
-public class Movement : NetworkBehaviour
+public class Movement : MonoBehaviour
 {
     public GameObject Cam;
 
@@ -37,10 +37,7 @@ public class Movement : NetworkBehaviour
         //can_move = h.thing;
         can_move = true;
 
-        if (!hasAuthority)
-        {
-            return;
-        }
+       
         
         if (Cam.activeSelf == true && can_move)
         {
@@ -56,32 +53,32 @@ public class Movement : NetworkBehaviour
                 }
 
 
-                float forwards = -(Input.GetAxis("Vertical"));
+          float forwards = -(Input.GetAxis("Vertical"));
 
-                if (forwards > 0)
-                {
-                    Girar_Ruedas = true;
-                    speed = speed + acceleration * Time.deltaTime;
-                }
+          if (forwards > 0)
+          {
+            Girar_Ruedas = true;
+            speed = speed + acceleration * Time.deltaTime;
+          }
 
-                else if (forwards < 0)
-                {
-                    Girar_Ruedas = true;
-                    speed = speed - acceleration * Time.deltaTime;
-                }
+          else if (forwards < 0)
+          {
+             Girar_Ruedas = true;
+             speed = speed - acceleration * Time.deltaTime;
+          }
 
-                else
-                {
-                    Girar_Ruedas = false;
-                    if (speed > 0)
-                    {
-                        speed = speed - brake * Time.deltaTime;
-                    }
-                    else
-                    {
-                        speed = speed + brake * Time.deltaTime;
-                    }
-                }
+        else
+        {
+           Girar_Ruedas = false;
+            if (speed > 0)
+            {
+               speed = speed - brake * Time.deltaTime;
+            }
+            else
+            {
+              speed = speed + brake * Time.deltaTime;
+            }
+        }
 
             speed = Mathf.Clamp(speed, -mSpeed, mSpeed);
             //if (speed > maxSpeed)
