@@ -7,8 +7,9 @@ public class onHit : MonoBehaviour
     public int dmg;
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         GameObject hit = collision.gameObject;
-        Health health = hit.GetComponent<Health>();
+        HealtOnline health = hit.GetComponent<HealtOnline>();
 
         if(health != null)
         {
