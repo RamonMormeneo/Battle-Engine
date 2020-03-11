@@ -155,13 +155,16 @@ MonoBehaviour:
   Bullet_Alquitran: {fileID: 6681722682575932793, guid: 18e8cd12c7bf3674aae7e5e03a5c9d93,
     type: 3}
   Bullet_Spawn: {fileID: 1916626196830766527}
+  Torreta: {fileID: 0}
+  cam: {fileID: 0}
   Sierras:
   - {fileID: 0}
   prefabLanzallamas: {fileID: 4570354212013248113, guid: 9a0f137492334cd4fbd9913b8c54fc8f,
     type: 3}
   emitterPos: {fileID: 5405310193643782119}
   AreaLlamas: {fileID: 5405310193633356996}
-  abilities: 0
+  abilities: 1
+  abilites2: 0
 --- !u!54 &5405310193779776472
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class CharSetup : MonoBehaviour
     public Camera MyCamera;
     public AudioListener MyAL;
     private HealtOnline health;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class CharSetup : MonoBehaviour
         {
             //PV.RPC("RPC_AddCharacter")
             MyCamera.gameObject.SetActive(true);
-            health.inictrans = gameObject.transform;
+            
             health.currentHealth = 100;
             health.Healthbar.sizeDelta = new Vector2(health.currentHealth * 2, health.Healthbar.sizeDelta.y);
         }

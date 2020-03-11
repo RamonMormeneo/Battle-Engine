@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         //WaitforPlayers h = FindObjectOfType<WaitforPlayers>();
 
         //can_move = h.thing;
-        can_move = true;
+
       
         if (PV.IsMine&& can_move)
         {

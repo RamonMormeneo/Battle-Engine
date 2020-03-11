@@ -10,7 +10,7 @@ public class Burning : MonoBehaviour
     private void Update()
     { 
         if(EnLlamas)
-            gameObject.GetComponent<Health>().currentHealth -= 1;       
+            gameObject.GetComponent<HealtOnline> ().currentHealth -= 1;       
     }
 
     private void OnTriggerEnter(Collider trigger)
