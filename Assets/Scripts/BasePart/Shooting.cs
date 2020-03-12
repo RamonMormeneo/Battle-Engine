@@ -40,6 +40,9 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     private Rigidbody body;
 
     public AudioSource turretShot;
+    public AudioSource flameSound;
+    public AudioSource sawSound;
+    public AudioSource whistle;
 
     void Start()
     {
@@ -64,6 +67,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 body.AddForce(transform.forward * -60000.0f, ForceMode.Impulse);
+                whistle.Play();
             }
 
 
@@ -90,6 +94,7 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
                         CDLanzallamas -= Time.deltaTime;
                         if (CDLanzallamas <= 0.0f)
                         {
+                            flameSound.Play();
                             CDLanzallamas = 4.0f;
                             AreaLlamas.GetComponent<Collider>().enabled = false;
                             GOINGCD = false;
@@ -103,7 +108,12 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
                 case Abilites.Sierras:
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
+                        sawSound.Play();
                         CmdSierras();
+                    }
+                    else
+                    {
+                        sawSound.Pause();
                     }
                     break;
                 case Abilites.Gancho:
