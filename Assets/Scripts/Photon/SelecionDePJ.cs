@@ -8,7 +8,7 @@ public class SelecionDePJ : MonoBehaviourPunCallbacks
 {
     public static SelecionDePJ SPJ;
     public enum Coches { Colosso, Hippo, Beetle }
-    Coches elcoche;
+    public Coches elcoche;
     public int CurrentScene;
     public int multiplayerScene;
     private void Awake()
@@ -46,29 +46,18 @@ public class SelecionDePJ : MonoBehaviourPunCallbacks
     public void Hippo()
     {
         elcoche = Coches.Hippo;
-        if (!PhotonNetwork.IsMasterClient)
+        /*if (!PhotonNetwork.IsMasterClient)
         {
             return;
         }
-        PhotonNetwork.LoadLevel(1);
+        PhotonNetwork.LoadLevel(1);*/
     }
     public void Beetle()
     {
         elcoche = Coches.Beetle;
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            return;
-        }
-        PhotonNetwork.LoadLevel(1);
+       
     }
-    public void OncharPick(int wichchar)
-    {
-        if(PlayerInf.PI!=null)
-        {
-            PlayerInf.PI.MYselectedChar = wichchar;
-            PlayerPrefs.SetInt("MyCharacet", wichchar);
-        }
-    }
+    
     public override void OnDisable()
     {
         base.OnDisable();
@@ -80,6 +69,14 @@ public class SelecionDePJ : MonoBehaviourPunCallbacks
         base.OnEnable();
         PhotonNetwork.AddCallbackTarget(this);
         SceneManager.sceneLoaded += OnSceneFinishLoading;
+    }
+    public void GameStart()
+    {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+        PhotonNetwork.LoadLevel(1);
     }
     void OnSceneFinishLoading(Scene scene, LoadSceneMode mode)
     {

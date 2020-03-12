@@ -20,7 +20,6 @@ public class Movement : MonoBehaviour
     public float speed_multiply;
     public bool can_move = false;
     public bool BASELIGERA, BASEMEDIANA, BASEGRANDE;
-    public AudioSource steamEngine;
 
     public bool Girar_Ruedas = false;
 
@@ -30,7 +29,6 @@ public class Movement : MonoBehaviour
         PV = GetComponent<PhotonView>();
         if (BASEMEDIANA)
             transform.eulerAngles = new Vector3(-90, 0.0f, 180);
-        steamEngine.Play();
     }
 
 

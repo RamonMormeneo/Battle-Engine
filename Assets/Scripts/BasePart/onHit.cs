@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class onHit : MonoBehaviour
 {
-    public AudioSource explosion;
     public int dmg;
     private void OnCollisionEnter(Collision collision)
     {
-        explosion.Play();
         Debug.Log(collision.gameObject.name);
         GameObject hit = collision.gameObject;
         HealtOnline health = hit.GetComponent<HealtOnline>();

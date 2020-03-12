@@ -10,13 +10,13 @@ using UnityEngine.SceneManagement;
 public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
 {
     public static OnRoom room;
-    private PhotonView PV;
+
     public bool IsGameLoaded;
     public int CurrentScene;
     public int multiplayerScene;
     Player[] pPhotonPlayers;
 
-    private void Awake()
+    /*private void Awake()
     {
         if(OnRoom.room==null)
         {
@@ -32,11 +32,11 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
             }
         }
         DontDestroyOnLoad(this.gameObject);
-    }
+    }*/
     // Start is called before the first frame update
     void Start()
     {
-        PV = GetComponent<PhotonView>();
+       
     }
    /* public override void OnEnable()
     {
@@ -56,13 +56,11 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         StartGame();
     }
  
-    void StartGame()
+    public void StartGame()
     {
-        if(!PhotonNetwork.IsMasterClient)
-        {
-            return;
-        }
-        PhotonNetwork.LoadLevel(2);
+      
+        SceneManager.LoadScene(2);
+         
     }
    /* void OnSceneFinishLoading(Scene scene, LoadSceneMode mode)
     {

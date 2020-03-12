@@ -6,7 +6,6 @@ public class PEM_Player : MonoBehaviour
 {
     float timer = 2.0f;
     bool activePEM = false;
-    public AudioSource PEMSound;
 
     private void Update()
     {
@@ -28,7 +27,6 @@ public class PEM_Player : MonoBehaviour
         if(collision.gameObject.tag == "PEM")
         {
             activePEM = true;
-            PEMSound.Play();
         }
     }
 

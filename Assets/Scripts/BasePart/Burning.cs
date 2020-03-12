@@ -6,7 +6,6 @@ public class Burning : MonoBehaviour
 {
 
     public bool EnLlamas = false;
-    public AudioSource inFlames;
 
     private void Update()
     { 
@@ -19,7 +18,6 @@ public class Burning : MonoBehaviour
         if(trigger.gameObject.tag == "Llamarada")
         {
             EnLlamas = true;
-            inFlames.Play();
         } 
     }
 
@@ -28,7 +26,6 @@ public class Burning : MonoBehaviour
         if (trigger.gameObject.tag == "Llamarada")
         {
             EnLlamas = false;
-            inFlames.Stop();
         }
     }
 }
