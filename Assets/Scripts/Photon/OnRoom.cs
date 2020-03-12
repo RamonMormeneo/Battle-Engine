@@ -55,13 +55,14 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         base.OnJoinedRoom();
         StartGame();
     }
+ 
     void StartGame()
     {
         if(!PhotonNetwork.IsMasterClient)
         {
             return;
         }
-        PhotonNetwork.LoadLevel(multiplayerScene);
+        PhotonNetwork.LoadLevel(1);
     }
     void OnSceneFinishLoading(Scene scene, LoadSceneMode mode)
     {
@@ -78,7 +79,7 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
 }

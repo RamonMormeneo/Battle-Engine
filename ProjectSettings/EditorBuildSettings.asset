@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MAP_TEST_01.unity
     guid: 676c9e731c0a3de4490cf20f927a3a5c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu_Selection_Personaje.unity
     guid: 1372d04e0f452694faca727595a78b3b
+  - enabled: 1
+    path: Assets/Scenes/Menu_Victoria.unity
+    guid: ac5a6123201ab2c4d8600d6d00e72ecd
   m_configObjects: {}
