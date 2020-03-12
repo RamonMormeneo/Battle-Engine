@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
+using Photon.Realtime;
 
-public class CharSetup : MonoBehaviour
+public class CharSetup : MonoBehaviourPunCallbacks
 {
     private PhotonView PV;
 
@@ -29,10 +31,22 @@ public class CharSetup : MonoBehaviour
           
         }
     }
-
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        base.OnDisconnected(cause);
+        SceneManager.LoadScene(0);
+    }
     // Update is called once per frame
     void Update()
     {
-        
+       /*if( PhotonNetwork.CurrentRoom.PlayerCount ==1)
+        {
+            PhotonNetwork.LeaveRoom();
+            while (PhotonNetwork.InRoom)
+            {
+
+            }
+            SceneManager.LoadScene(0);
+        }*/
     }
 }
