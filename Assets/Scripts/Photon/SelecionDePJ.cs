@@ -4,11 +4,13 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
 using System.IO;
-public class SelecionDePJ : MonoBehaviour
+public class SelecionDePJ : MonoBehaviourPunCallbacks
 {
     public static SelecionDePJ SPJ;
     public enum Coches { Colosso, Hippo, Beetle }
     Coches elcoche;
+    public int CurrentScene;
+    public int multiplayerScene;
     private void Awake()
     {
         if(SelecionDePJ.SPJ == null)
@@ -31,6 +33,7 @@ public class SelecionDePJ : MonoBehaviour
     {
         
     }
+    
     public void Colosso()
     {
         elcoche = Coches.Colosso;
@@ -66,9 +69,42 @@ public class SelecionDePJ : MonoBehaviour
             PlayerPrefs.SetInt("MyCharacet", wichchar);
         }
     }
-    public void LoadLv1()
+    public override void OnDisable()
     {
+        base.OnDisable();
+        PhotonNetwork.RemoveCallbackTarget(this);
+        SceneManager.sceneLoaded -= OnSceneFinishLoading;
+    }
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        PhotonNetwork.AddCallbackTarget(this);
+        SceneManager.sceneLoaded += OnSceneFinishLoading;
+    }
+    void OnSceneFinishLoading(Scene scene, LoadSceneMode mode)
+    {
+        CurrentScene = scene.buildIndex;
+        if (CurrentScene == multiplayerScene)
+        {
+            LoadPlayer();
+        }
 
+    }
+   
+    private void LoadPlayer()
+    {
+        switch (elcoche)
+        {
+            case Coches.Colosso:
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerStart"), transform.position, Quaternion.identity, 0);
+                break;
+            case Coches.Beetle:
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerStart2"), transform.position, Quaternion.identity, 0);
+                break;
+            case Coches.Hippo:
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerStart3"), transform.position, Quaternion.identity, 0);
+                break;
+        }
     }
     // Update is called once per frame
     void Update()

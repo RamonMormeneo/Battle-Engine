@@ -38,7 +38,7 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     {
         PV = GetComponent<PhotonView>();
     }
-    public override void OnEnable()
+   /* public override void OnEnable()
     {
         base.OnEnable();
         PhotonNetwork.AddCallbackTarget(this);
@@ -49,7 +49,7 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         base.OnDisable();
         PhotonNetwork.RemoveCallbackTarget(this);
         SceneManager.sceneLoaded -= OnSceneFinishLoading;
-    }
+    }*/
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
@@ -62,9 +62,9 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         {
             return;
         }
-        PhotonNetwork.LoadLevel(1);
+        PhotonNetwork.LoadLevel(2);
     }
-    void OnSceneFinishLoading(Scene scene, LoadSceneMode mode)
+   /* void OnSceneFinishLoading(Scene scene, LoadSceneMode mode)
     {
         CurrentScene = scene.buildIndex;
         if(CurrentScene== multiplayerScene)
@@ -75,7 +75,7 @@ public class OnRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     private void LoadPlayer()
     {
         PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerStart"), transform.position, Quaternion.identity, 0);
-    }
+    }*/
     // Update is called once per frame
     void Update()
     {

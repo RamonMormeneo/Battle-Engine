@@ -150,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f43c4fb481678429187795e898209d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentScene: 2
+  multiplayerScene: 1
 --- !u!4 &36728988
 Transform:
   m_ObjectHideFlags: 0
@@ -551,8 +553,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 36728987}
-        m_MethodName: OncharPick
-        m_Mode: 3
+        m_MethodName: Colosso
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2942,7 +2944,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1675798375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 36728987}
+        m_MethodName: Hippo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1675798375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4002,8 +4015,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 36728987}
-        m_MethodName: OncharPick
-        m_Mode: 3
+        m_MethodName: Beetle
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
