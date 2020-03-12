@@ -608,6 +608,7 @@ MonoBehaviour:
   BASELIGERA: 0
   BASEMEDIANA: 1
   BASEGRANDE: 0
+  steamEngine: {fileID: 1583852760326094537}
   Girar_Ruedas: 0
 --- !u!114 &8402201577735423959
 MonoBehaviour:
