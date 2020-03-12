@@ -39,6 +39,8 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
 
     private Rigidbody body;
 
+    public AudioSource turretShot;
+
     void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -131,6 +133,8 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
         GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet(Online)"), Bullet_Spawn.position, Bullet_Spawn.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 250.0f, ForceMode.Impulse);
         bullet.GetComponent<Rigidbody>().AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
+
+        turretShot.Play();
 
         // add velocity
         //bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100.0f;
