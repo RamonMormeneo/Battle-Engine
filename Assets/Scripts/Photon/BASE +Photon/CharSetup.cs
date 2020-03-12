@@ -12,7 +12,7 @@ public class CharSetup : MonoBehaviourPunCallbacks
     public Camera MyCamera;
     public AudioListener MyAL;
     private HealtOnline health;
-   
+    public bool Ready=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,10 @@ public class CharSetup : MonoBehaviourPunCallbacks
             
             health.currentHealth = 100;
             health.Healthbar.sizeDelta = new Vector2(health.currentHealth * 2, health.Healthbar.sizeDelta.y);
+            if(PhotonNetwork.CurrentRoom.PlayerCount==PhotonNetwork.CurrentRoom.MaxPlayers)
+            {
+                Ready = true;
+            }
         }
         else
         {
@@ -34,19 +38,23 @@ public class CharSetup : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         base.OnDisconnected(cause);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
     // Update is called once per frame
     void Update()
     {
-       /*if( PhotonNetwork.CurrentRoom.PlayerCount ==1)
+        if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
+        {
+            Ready = true;
+        }
+        if ( PhotonNetwork.CurrentRoom.PlayerCount ==1 && Ready)
         {
             PhotonNetwork.LeaveRoom();
             while (PhotonNetwork.InRoom)
             {
 
             }
-            SceneManager.LoadScene(0);
-        }*/
+            SceneManager.LoadScene(3);
+        }
     }
 }

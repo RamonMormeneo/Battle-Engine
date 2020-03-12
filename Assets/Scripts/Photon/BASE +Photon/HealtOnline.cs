@@ -15,11 +15,18 @@ public class HealtOnline : MonoBehaviour
     private PhotonView PV;
     public Transform inictrans;
     public float currLive = 3.0f;
+    public bool ready = false;
     // Start is called before the first frame update
     void Start()
     {
         PV = GetComponent<PhotonView>();
-        
+        if (PV.IsMine)
+        {
+            if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
+            {
+                ready = true;
+            }
+        }
 
     }
     public void TeakeDamge(int amount)
@@ -34,6 +41,7 @@ public class HealtOnline : MonoBehaviour
                 currentHealth = 0;
                 RpcSpawnplayer();
             }
+
         }
     }
 
@@ -45,16 +53,26 @@ public class HealtOnline : MonoBehaviour
             Healthbar.sizeDelta = new Vector2(currentHealth * 2, Healthbar.sizeDelta.y);
             transform.position = inictrans.position;
             transform.rotation = inictrans.rotation;
-            currLive--;
-            if(currLive<=0)
+            if (ready)
             {
-                PhotonNetwork.LeaveRoom();
-                while(PhotonNetwork.InRoom)
+                currLive--;
+                if (currLive <= 0)
                 {
-                    
+                    PhotonNetwork.LeaveRoom();
+                    while (PhotonNetwork.InRoom)
+                    {
+
+                    }
+                    SceneManager.LoadScene(5);
                 }
-                SceneManager.LoadScene(0);
             }
+        }
+    }
+     void Update()
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
+        {
+            ready = true;
         }
     }
 }

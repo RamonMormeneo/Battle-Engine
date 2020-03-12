@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu_Principal.unity
+    guid: d76bdbb0ae0d38d4a86d60f5e133578f
+  - enabled: 0
     path: Assets/Scenes/TestMultiplayer.unity
     guid: 21f9ba2a03ec0784581e43b5c98fa9a7
   - enabled: 0
@@ -23,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_Victoria.unity
     guid: ac5a6123201ab2c4d8600d6d00e72ecd
+  - enabled: 1
+    path: Assets/Scenes/Menu_Desconexion.unity
+    guid: 8bb992668130fef49a94e49634d887a2
+  - enabled: 1
+    path: Assets/Scenes/Menu_Derrota.unity
+    guid: e9599f90ee71a374bb5c064e28c0c730
   m_configObjects: {}
