@@ -737,6 +737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 22636448}
   - component: {fileID: 22636447}
+  - component: {fileID: 22636449}
   m_Layer: 0
   m_Name: CAIDA_MUERTE_PUENTE
   m_TagString: Untagged
@@ -771,6 +772,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &22636449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22636446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66d6f8b046b2c44680e63dbdc6d7016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 100
 --- !u!1001 &27508482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39453,6 +39467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1437277919}
   - component: {fileID: 1437277918}
+  - component: {fileID: 1437277920}
   m_Layer: 0
   m_Name: CAIDA_MUERTE
   m_TagString: Untagged
@@ -39487,6 +39502,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1437277920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437277917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66d6f8b046b2c44680e63dbdc6d7016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 100
 --- !u!1001 &1438599344
 PrefabInstance:
   m_ObjectHideFlags: 0
