@@ -197,13 +197,20 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
     void CmdPEM(float F)
     {
         GameObject obj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet_PEM"), Bullet_Spawn.position, Bola_PEM.transform.rotation); // Instanciar tiro.
-        obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
+        //obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
+
+        obj.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 250.0f, ForceMode.Impulse);
+        obj.GetComponent<Rigidbody>().AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
+
     }
 
     void CmdAlquitran(float F)
     {
         GameObject obj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet_Alquitran"), Bullet_Spawn.position, Bullet_Alquitran.transform.rotation); // Instanciar tiro.
-        obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
+        //obj.GetComponent<Rigidbody>().AddForce(-transform.forward * F, ForceMode.Impulse);
+        obj.GetComponent<Rigidbody>().AddForce(cam.transform.forward * 250.0f, ForceMode.Impulse);
+        obj.GetComponent<Rigidbody>().AddForce(Vector3.up * 100.0f, ForceMode.Impulse);
+
     }
 
     void CmdLanzallamas()
