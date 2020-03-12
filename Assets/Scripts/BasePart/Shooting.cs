@@ -69,11 +69,11 @@ public class Shooting : /*NetworkBehaviour*/ MonoBehaviour
             }
 
 
-            //Torreta gira con la camara: //Try: not working.
-            Torreta.transform.localEulerAngles =
-                new Vector3(Torreta.transform.localEulerAngles.x,
-                cam.transform.localEulerAngles.y,
-                Torreta.transform.localEulerAngles.z);
+            ////Torreta gira con la camara: //Try: not working.
+            //Torreta.transform.localEulerAngles =
+            //    new Vector3(Torreta.transform.localEulerAngles.x,
+            //    cam.transform.localEulerAngles.y,
+            //    Torreta.transform.localEulerAngles.z);
 
 
             // Entrada a escoger de habilidad.
