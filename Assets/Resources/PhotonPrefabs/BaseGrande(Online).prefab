@@ -458,6 +458,7 @@ MonoBehaviour:
   Healthbar: {fileID: 4484031325878415709}
   maxLife: 3
   inictrans: {fileID: 0}
+  currLive: 3
 --- !u!65 &3653070809875993053
 BoxCollider:
   m_ObjectHideFlags: 0
